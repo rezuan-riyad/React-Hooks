@@ -11,18 +11,18 @@ const initialState = {
 
 function reducer(state, action){
   switch(action.type){
-    case 'field':
+    case 'FIELD':
       return {
         ...state,
         [action.fieldName]: action.payload
       }
-    case 'login':
+    case 'LOGIN':
       return {
         ...state,
         error: '',
         isLoading: true,
       }
-    case 'success':
+    case 'SUCCESS':
       return {
         ...state,
         uname: '',
@@ -30,13 +30,13 @@ function reducer(state, action){
         isLoading: false,
         isLoggedIn: true
       }
-    case 'error':
+    case 'ERROR':
       return {
         ...state,
         isLoading: false,
         error: action.payload
       }
-    case 'logout':
+    case 'LOGOUT':
       return{
         ...state,
         isLoggedIn: false,
@@ -53,10 +53,10 @@ export default function LoginUseReducer() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    dispatch({type: 'login'})
+    dispatch({type: 'LOGIN'})
     await login(uname, pass)
-      .then( () => dispatch({ type: 'success' }) )
-      .catch( (err) => dispatch({ type: 'error', payload: err }) )
+      .then( () => dispatch({ type: 'SUCCESS' }) )
+      .catch( (err) => dispatch({ type: 'ERROR', payload: err }) )
   }
 
   return(
@@ -66,7 +66,7 @@ export default function LoginUseReducer() {
         (
           <div>
             <h1>Hello John Doe!</h1>
-            <button onClick={() => dispatch({ type: 'logout' })}>Log Out</button>
+            <button onClick={() => dispatch({ type: 'LOGOUT' })}>Log Out</button>
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
@@ -77,7 +77,7 @@ export default function LoginUseReducer() {
             value={uname}
             placeholder="Username"
             onChange={e => dispatch({
-              type: 'field',
+              type: 'FIELD',
               fieldName: 'uname',
               payload: e.target.value
             })}
@@ -87,7 +87,7 @@ export default function LoginUseReducer() {
             value={pass}
             placeholder="Password"
             onChange={e => dispatch({
-              type: 'field',
+              type: 'FIELD',
               fieldName: 'pass',
               payload: e.target.value
             })}

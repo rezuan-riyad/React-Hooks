@@ -5,7 +5,9 @@ import './App.css'
 // import ApiCallUseEffect from './components/ApiCallUseEffect'
 // import UseReducerExample from './components/UseReducerExample'
 // import Login from './components/Login'
-import LoginUseReducer from './components/LoginUseReducer'
+// import LoginUseReducer from './components/LoginUseReducer'
+import SignUp from './customHooks/SignUp'
+
 
 function App() {
   return (
@@ -13,7 +15,8 @@ function App() {
       {/* <ApiCallUseEffect /> */}
       {/* <UseReducerExample /> */}
       {/* <Login /> */}
-      <LoginUseReducer />
+      {/* <LoginUseReducer /> */}
+      <SignUp />
     </div>
   );
 }
