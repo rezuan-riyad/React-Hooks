@@ -6,7 +6,8 @@ import './App.css'
 // import UseReducerExample from './components/UseReducerExample'
 // import Login from './components/Login'
 // import LoginUseReducer from './components/LoginUseReducer'
-import SignUp from './customHooks/SignUp'
+// import SignUp from './customHooks/SignUp'
+import AbortApiCall from './components/AbortApiCall'
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       {/* <UseReducerExample /> */}
       {/* <Login /> */}
       {/* <LoginUseReducer /> */}
-      <SignUp />
+      <AbortApiCall />
     </div>
   );
 }
